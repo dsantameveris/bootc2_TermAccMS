@@ -57,7 +57,8 @@ public class TermAccountServiceImpl implements TermAccountService
     //Create Account
     @Override
     public Mono<TermAccount> addAccount(TermAccount account) {
-        return repo.save(account);
+        return repo.findByNumber(account.getNumber())
+                                        .switchIfEmpty(repo.save(account));
     }
 
     //DeleteAccount
