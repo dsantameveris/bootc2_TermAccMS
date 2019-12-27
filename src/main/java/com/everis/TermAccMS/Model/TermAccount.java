@@ -2,6 +2,8 @@ package com.everis.TermAccMS.Model;
 
 import javax.validation.constraints.NotBlank;
 
+import com.everis.TermAccMS.Model.Secondary.Owner;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -18,7 +20,7 @@ public class TermAccount
     private String number;
 
     @NotBlank
-    private String owners;
+    private Owner owner;
 
     @NotBlank
     private String currency;
